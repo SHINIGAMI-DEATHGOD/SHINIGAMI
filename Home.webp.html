@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>Flower Shop</title>
+  <style>
+    :root{
+      --accent:#c0392b; --muted:#666; --bg:#fffaf6; --card:#fff; --radius:10px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+
+    /* Ensure page uses full viewport and allows horizontal scrolling on small scL,Leens */
+    html,body{height:100%;margin:0;background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:auto;}
+
+    
+    /* Fixed container para kt phone gamit is horizontal parin*/
+    site {display:block;width:1400px;max-width:1400px;margin:0 auto;padding:20px;box-sizing:border-box;}
+
+    /* Basic layout */
+    header, main, footer, section, article, nav, form, aside {box-sizing:border-box;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+    header h1{margin:0;font-size:22px}
+    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:15px}
+
+    .hero{display:flex;gap:18px;align-items:center;padding:16px;border-radius:var(--radius);background:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+    .hero-left{flex:1}
+    .cta{background:var(--accent);color:#fff;padding:9px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+    article.card{background:var(--card);padding:24px;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.03);display:flex;flex-direction:column}
+    article.card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin:10px 0;font-size:14px;color:var(--muted)}
+    .actions{display:flex;gap:8px;margin-top:auto}
+    .btn{flex:1;padding:9px;border-radius:8px;text-align:center;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-muted{background:transparent;border:1px solid #eee;color:var(--muted)}
+    
+   
+    /* Contact / About */
+    section.info{margin-top:18px;padding:12px;background:#fff;border-radius:10px}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:14px}
+
+    /* Keep layout usable on much narrower screens for horizontal scroll */
+    @media (max-width:1366px){
+      /* does not reduce the fixed width.... user will scroll horizontally */
+    }
+    table {
+  width: 80%; /* To Center  */
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse; 
+}
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+  </style>
+</head>
+<body>
+  <site aria-label="Site container">
+    <header>
+      <headeritem>
+        <h1>Forever Blooms</h1>
+        <p style="margin:4px 0 0;color:var(--muted);font-size:13px">Fresh bouquets · Local delivery</p>
+      </headeritem>
+
+      <nav aria-label="Main">
+      
+        <a href="Home.html">Home</a>
+        <a href="Contact.html">Contact</a>
+        
+
+    </header>
+
+    <section class="hero" aria-label="Intro">
+      <article class="hero-left">
+        <strong style="display:inline-block;background:#fff1f0;color:var(--accent);padding:6px 10px;border-radius:999px;font-size:13px">New</strong>
+        <h2 style="margin:8px 0 6px">Hand-tied bouquets, 1 to 3 day delivery</h2>
+        <p style="margin:0 0 12px;color:var(--muted)">Locally Grown, Carefully Arranged.</p>
+
+       
+      </article>
+
+<!-- Logo -->
+
+      <aside style="width:360px;text-align:center">
+        <img src="logo.png" alt="Logo" style="width:70%;border-radius:8px;height:200px;object-fit:cover" />
+        <p style="margin:10px 0 0;color:var(--muted);font-size:13px">Direct and Elegant</p>
+      </aside>
+    </section>
+
+    <main id="catalog" aria-label="Catalog">
+      <header style="display:flex;justify-content:space-between;align-items:center;margin-top:18px">
+        <h3 style="margin:0;font-size:18px">Featured bouquets</h3>
+        <p style="margin:0;color:var(--muted);font-size:14px">Showing 6 items</p>
+      </header>
+
+ 
+
+<table>
+
+<!-- Royal Blue Silk Tiger lily -->
+     <section class="grid" id="products" style="margin-top:12px">
+
+
+<!-- 1st table row!!! -->      
+    <tr>     
+      <td>
+        
+        <article class="card" data-id="1">
+          <img src="RBSTL.png.webp" alt="Royal Blue Silk Tiger Lily Bloom" />
+          <p class="meta"><strong>Royal Blue Silk Tiger Lily Bloom</strong><span style="color:var(--accent);font-weight:700">₱1,250</span></p>
+          <p style="margin:0;color:var(--muted);font-size:14px">A rare bloom of noble confidence.</p>
+          <footer class="actions">
+            <a class="btn btn-muted" href="#details" onclick="showDetail(event,1)">Details</a>           
+          </footer>
+        </article>
+      </td>
+      <!-- Hyancith -->
+      <td>
+        <article class="card" data-id="2">
+          <img src="Hya.png.jpg" alt="Hyancith" />
+          <p class="meta"><strong>Hyancith</strong><span style="color:var(--accent);font-weight:700">₱850</span></p>
+          <p style="margin:0;color:var(--muted);font-size:14px">A fragrant burst of vibrant blooms that symbolize devotion, sincerity, and joyful renewal.”</p>
+          <footer class="actions">
+            <a class="btn btn-muted" href="#details" onclick="showDetail(event,2)">Details</a>           
+          </footer>
+        </article>
+      </td> 
+      <!-- Spider Lily -->
+      <td>
+        <article class="card" data-id="3">
+          <img src="spider lily.jpg" alt="spider lily" />
+          <p class="meta"><strong>Spider Lily</strong><span style="color:var(--accent);font-weight:700">₱980</span></p>
+          <p style="margin:0;color:var(--muted);font-size:14px">An exotic flower with delicate, spidery petals that symbolize farewell, rebirth, and graceful transformation.</p>
+          <footer class="actions">
+            <a class="btn btn-muted" href="#details" onclick="showDetail(event,3)">Details</a>        
+          </footer>
+        </article>
+      </td>  
+    </tr>
+
+
+<!-- 2nd table row!!! -->      
+<tr>
+<!-- Red Rose -->
+
+
+<td>
+  <article class="card" data-id="4">
+    <img src="Red Rose.jpg" alt="Red Rose" />
+    <p class="meta"><strong>Red Rose</strong><span style="color:var(--accent);font-weight:700">₱720</span></p>
+    <p style="margin:0;color:var(--muted);font-size:14px">The ultimate symbol of passion and romance, with timeless beauty that conveys deep love and devotion.</p>
+    <footer class="actions">
+      <a class="btn btn-muted" href="#details" onclick="showDetail(event,4)">Details</a>         
+    </footer>
+  </article>
+</td>   
+<!-- Ranunculus -->
+<td>  
+  <article class="card" data-id="5">
+    <img src="Ranunculus.jpg.webp" alt="Ranunculus" />
+    <p class="meta"><strong>Ranunculus</strong><span style="color:var(--accent);font-weight:700">₱1,800</span></p>
+    <p style="margin:0;color:var(--muted);font-size:14px">A dazzling bloom of layered petals that embodies radiant charm, elegance, and irresistible allure.</p>
+    <footer class="actions">
+      <a class="btn btn-muted" href="#details" onclick="showDetail(event,5)">Details</a>
+    </footer>
+  </article>
+</td>  
+<!-- Dahlia -->
+<td>
+  <article class="card" data-id="6">
+    <img src="Dahlia.jpg" alt="Dahlia" />
+    <p class="meta"><strong>Dahlia</strong><span style="color:var(--accent);font-weight:700">₱650</span></p>
+    <p style="margin:0;color:var(--muted);font-size:14px">A striking bloom of endless colors that embodies elegance, creativity, and lasting beauty.</p>
+    <footer class="actions">
+      <a class="btn btn-muted" href="#details" onclick="showDetail(event,6)">Details</a>
+    </footer>
+  </article>
+</td>
+
+</tr>
+
+</section>
+</main>
+
+</table>
+
+<!-- OPENING HOURS -->
+
+    <section id="OPENING HOURS" class="info" aria-label="About">
+      <h4 style="margin:0 0 8px">OPENING HOURS</h4>
+      <p style="margin:0;color:var(--muted)">Open From Monday To Friday 11:00 AM-10:00 PM</p>
+    </section>
+
+    <!-- Contact INfo -->
+
+    <section id="contact Info" class="info" aria-label="ContactInfo" style="display:flex;gap:16px;align-items:flex-start;margin-top:12px">
+      <aside style="min-width:260px">
+        <strong>Contact Info</strong>
+        <p style="margin:8px 0 0;color:var(--muted)">Phone: 0912-123-1234<br>Email: joeltorre0303@gmail.com</p>
+      </aside>
+
+
+    </section>
+
+    <footer>
+      <small>© <span id="year"></span> Flower Shop. All rights reserved</small>
+    </footer>
+  </site>
+
+<!-- Show details function -->
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const products = {
+      1:{Details:"Bilhin niy na Plsss HAHAHAH"},2:{Details:"Bilhin niyo na HAHAHAHA"},3:{Details:"Bilhin nyo na"},
+      4:{Details:"HI PLSS BUY NYO NA"},5:{Details:"BUY NOW PERO WLANG PRODUCT"},6:{Details:"HAHAHAl"}
+    };
+
+      
+
+    function showDetail(e,id){ e.preventDefault(); const p=products[id]; alert(p.Details + "\nDiko alam next dito."); }
+
+
+  </script>
+</body>
+</html>
+
